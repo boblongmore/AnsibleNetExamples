@@ -1,0 +1,19 @@
+---
+
+- name: Apply Configuration to CSR
+  hosts: CSR
+  vars:
+    creds:
+      username: admin
+      password: cisco
+      authorize: yes
+
+  tasks:
+    - name: Configure Interface G2
+      ios_config:
+        provider: "{{ creds }}"
+        lines:
+          - ip address 10.1.1.1 255.255.255.252
+          - description Configured by Ansible Playbook CSR-Basic
+        parents: interface g1
+
