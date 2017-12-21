@@ -1,0 +1,19 @@
+---
+OSPF_Process_ID: 100
+OSPF_Router_ID: 1.1.1.1
+SNMP: [10.1.1.1]
+SNMP_RW: privateRW
+domain_name: example.com
+hostname: CSR01
+interfaces:
+- {description: to_Core, intf: g1, ip: 192.168.1.1, mask: 255.255.255.252, ospf_area: 0,
+  state: no shutdown}
+- {description: to_Core, intf: g2, ip: 192.168.1.4, mask: 255.255.255.252, ospf_area: 1,
+  state: no shutdown}
+- {description: EIGRP RID, intf: lo1, ip: 1.1.1.1, mask: 255.255.255.255, ospf_area: 0,
+  state: no shutdown}
+netflow_ip: 10.1.1.1
+ntp_ip: 10.1.1.100
+snmp_community: [publicRO]
+syslog_ip: [10.1.1.1]
+time_zone: CST

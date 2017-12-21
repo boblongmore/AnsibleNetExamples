@@ -1,0 +1,29 @@
+
+
+hostname {{ hostname }}
+
+
+ip domain-name {{ domain_name }}
+crypto key generate rsa modulus 2048
+
+
+{% for snmp_string in snmp_community -%}
+snmp-server community {{ snmp_string }}
+{% endfor %}
+
+{% for ntp in ntp_server %}
+ntp-server {{ ntp }} use-vrf management
+{% endfor %}
+
+
+{% for interface in interfaces %}
+interface {{ interface.intf }}
+  {{ interface.switchport }}
+  description {{ interface.description }}
+  ip address {{ interface.ip }} {{ interface.mask }}
+  ip ospf {{ OSPF_Process_ID }} area {{ interface.ospf_area }}
+  {{ interface.state }}
+{% endfor %}
+
+router ospf {{ OSPF_Process_ID }}
+router-id {{ OSPF_Router_ID }}
