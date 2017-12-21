@@ -1,0 +1,11 @@
+---
+- name: run script
+  hosts: localhost
+
+  tasks:
+  - name: RunScript
+    become: yes
+    command: python /Github/AnsibleExamples/CSR-Builder/build_CSR.py
+    args:
+      chdir: /Github/AnsibleNetExamples/CSR-Builder/
+
