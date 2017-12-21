@@ -1,0 +1,12 @@
+---
+- name: provide creds
+  hosts: CSR
+  #vars:
+  #  creds:
+  #    username: admin
+  #    password: cisco
+  #    authorize: yes
+  roles:
+    #- ntp
+    #- ospf
+    - interfaces

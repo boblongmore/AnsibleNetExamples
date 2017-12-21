@@ -1,0 +1,16 @@
+---
+- name: apply config
+  hosts: CSR
+  vars:
+    creds:
+      username: admin
+      password: cisco
+      authorize: yes
+
+
+  tasks:
+    - name: apply from cfg files
+      ios_config:
+        provider: "{{ creds }}"
+        authorize: yes
+        src: "/Github/AnsibleExample/CSR-Builder/cfg_files/CSR01.cfg"

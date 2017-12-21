@@ -1,0 +1,6 @@
+localhost ansible_connection=local
+
+[CSR]
+172.16.9.155
+[CSR:vars]
+ansible_connection=local

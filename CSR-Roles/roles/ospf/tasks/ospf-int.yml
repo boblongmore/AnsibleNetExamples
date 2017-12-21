@@ -1,0 +1,8 @@
+---
+
+- name: set OSPF Interface
+  ios_config:
+    lines:
+      - ip ospf 100 area 0
+    parents:
+      - interface g1

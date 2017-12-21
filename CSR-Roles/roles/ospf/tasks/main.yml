@@ -1,0 +1,4 @@
+---
+
+- import_tasks: ospf-proc.yml
+- import_tasks: ospf-int.yml
