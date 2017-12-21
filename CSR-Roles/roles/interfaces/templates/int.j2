@@ -1,2 +1,6 @@
-interface {{ interface.name }}
-ip address {{ interface.ip_addr}}
+{% for interface in interface.name %}
+interface {{ interface['int'] }}
+description {{ interface['description'] }}
+ip address {{ interface['ip'] }} {{ interface['mask']}}
+no shutdown
+{% endfor %}
