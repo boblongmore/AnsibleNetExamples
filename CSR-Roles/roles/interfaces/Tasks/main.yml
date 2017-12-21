@@ -2,7 +2,8 @@
 
 - name: configure interface settings
   ios_config:
-    lines:
-      - ip address 192.168.2.1 255.255.255.0
-      - no shutdown
-    parents: interface g2
+    #lines:
+    src: int.j2
+   #   - ip address 192.168.2.1 255.255.255.0
+   #   - no shutdown
+   # parents: interface g2
