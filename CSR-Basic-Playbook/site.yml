@@ -16,4 +16,8 @@
           - ip address 10.1.1.1 255.255.255.252
           - description Configured by Ansible Playbook CSR-Basic
         parents: interface g1
+    - name: Configure NTP
+      ios_config:
+        provider: "{{ creds }}"
+        lines: ntp server time.google.com
 
