@@ -2,13 +2,11 @@
 
 - name: set ospf process
   ios_config:
-    provider: "{{ creds }}"
     lines:
       - router ospf 100
 
 - name: set router id
   ios_config:
-    provider: "{{ creds}}"
     lines:
       - router-id 1.1.1.1
     parents: router ospf 100

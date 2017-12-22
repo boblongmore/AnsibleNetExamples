@@ -1,12 +1,8 @@
 ---
-- name: provide creds
+- name: CSR Roles Playbook
   hosts: CSR
-  #vars:
-  #  creds:
-  #    username: admin
-  #    password: cisco
-  #    authorize: yes
+
   roles:
-    #- ntp
-    #- ospf
+    - ntp
+    - ospf
     - interfaces
