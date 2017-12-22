@@ -5,7 +5,7 @@
   tasks:
   - name: RunScript
     become: yes
-    command: python /Github/AnsibleExamples/CSR-Builder/build_CSR.py
+    command: python /Github/AnsibleNetExamples/CSR-Builder/build_CSR.py
     args:
       chdir: /Github/AnsibleNetExamples/CSR-Builder/
 
