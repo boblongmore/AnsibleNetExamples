@@ -7,7 +7,7 @@
     - name: show version
       ios_command:
         commands:
-        #- show version | i IOS XE Software
+        - show version | i IOS XE Software
         - show ip int brief
       register: show_ver
-    - debug: msg="{{ show_ver.stdout_lines | to_nice_yaml }}"
+    - debug: msg="{{ show_ver['stdout_lines'] }}"
