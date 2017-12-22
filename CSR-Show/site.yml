@@ -1,0 +1,12 @@
+---
+
+- name: CSR-Show playbook
+  hosts: CSR
+
+  tasks:
+    - name: show version
+      ios_command:
+        commands:
+        - show version | i IOS XE Software
+      register: show_ver
+    - debug: msg="{{ show_ver }}" >> ./show_ver.log
