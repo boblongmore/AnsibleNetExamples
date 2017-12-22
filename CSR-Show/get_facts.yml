@@ -1,0 +1,12 @@
+---
+#- name: gather facts
+- hosts: CSR
+  tasks:
+    - name: Get CSR Facts
+      ios_facts:
+        #gather_subset: 
+        #- all
+        #- interfaces
+      #register: thefacts
+
+    - debug: var=ansible_net_interfaces
