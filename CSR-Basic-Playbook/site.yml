@@ -6,7 +6,6 @@
     creds:
       username: admin
       password: cisco
-      authorize: yes
 
   tasks:
     - name: Configure Interface G2
@@ -19,5 +18,5 @@
     - name: Configure NTP
       ios_config:
         provider: "{{ creds }}"
-        lines: ntp server time.google.com
+        lines: ntp server 169.1.1.3
 
